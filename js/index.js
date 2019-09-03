@@ -69,4 +69,24 @@ newNav2.style.color = "green";
 document.querySelector("nav").prepend(newNav2);
 
 //CTA Stuff --------------------------------------------------------------------//
+let ctaText = document.querySelector('h1');
+ctaText.textContent = siteContent["cta"]["h1"];
 
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent["cta"]["button"];
+
+//Main Content -----------------------------------------------------------------//
+let pArray = siteContent["main-content"];
+let keys = Object.keys(pArray);
+
+let getHContent = document.querySelectorAll(".text-content h4");
+let newKeys = keys.filter(n => n.includes("h4"));
+for(let i = 0; i < newKeys.length; i++){
+  getHContent[i].innerHTML = pArray[newKeys[i]];
+}
+
+let getPContent = document.querySelectorAll(".text-content p");
+newKeys = keys.filter(n => n.includes("content"));
+for(let i = 0; i < newKeys.length; i++){
+  getPContent[i].innerHTML = pArray[newKeys[i]];
+}
