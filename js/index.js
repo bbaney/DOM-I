@@ -90,3 +90,19 @@ newKeys = keys.filter(n => n.includes("content"));
 for(let i = 0; i < newKeys.length; i++){
   getPContent[i].innerHTML = pArray[newKeys[i]];
 }
+
+//Contact ----------------------------------------------------------------------//
+
+let contactInfo = siteContent["contact"];
+let contactH = document.querySelectorAll(".contact h4");
+contactH[0].textContent = contactInfo["contact-h4"];
+
+let contact = document.querySelectorAll(".contact p");
+contact[0].textContent = contactInfo["address"];
+contact[1].textContent = contactInfo["phone"];
+contact[2].textContent = contactInfo["email"];
+
+//Footer -----------------------------------------------------------------------//
+
+let footer = document.querySelectorAll("footer p");
+footer[0].textContent = siteContent["footer"]["copyright"];
