@@ -43,3 +43,30 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+//Header------------------------------------------------------------------------//
+let navBar = document.querySelectorAll('a');
+let navItems = siteContent["nav"];
+
+for(let i = 0; i < navBar.length; i++){
+  navBar[i].textContent = navItems[`nav-item-${i+1}`];
+  navBar[i].style.color = "green";
+}
+
+let newNav = document.createElement("a");
+let newNavText = document.createTextNode("Sign Up!");
+newNav.appendChild(newNavText);
+newNav.style.color = "green";
+document.querySelector("nav").appendChild(newNav);
+
+let newNav2 = document.createElement("a");
+let newNavText2 = document.createTextNode("Login!");
+newNav2.prepend(newNavText2);
+newNav2.style.color = "green";
+document.querySelector("nav").prepend(newNav2);
+
+//CTA Stuff --------------------------------------------------------------------//
+
